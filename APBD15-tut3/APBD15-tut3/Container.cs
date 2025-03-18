@@ -34,4 +34,15 @@ public abstract class Container
     {
         MassOfCargo = 0;
     }
+    public void PrintInformationAboutContainer()
+    {
+        Console.WriteLine($"Container: \"{SerialNumber}\"," +
+                          $" Id = \"{Id}\"," +
+                          $" Height = \"{Height}\"," +
+                          $" Depth = \"{Depth}\"," +
+                          $" MaxPayLoad = \"{MaxPayLoad}\"," +
+                          $" Tare Weight = \"{TareWeight}\" kg," +
+                          $" Cargo Weight = \"{MassOfCargo}\" kg"
+        );
+    }
 }
