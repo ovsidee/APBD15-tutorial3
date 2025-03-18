@@ -4,10 +4,9 @@ public class LiquidContainer : Container, IHazardNotifier
 {
     public bool IsHazardousCargo { get; }
     public LiquidContainer(bool isHazardousCargo, double massOfCargo, double height, double tareWeight, double depth, double maxPayLoad)
-        : base(massOfCargo, height, tareWeight, depth, maxPayLoad)
+        : base('L', massOfCargo, height, tareWeight, depth, maxPayLoad)
     {
         IsHazardousCargo = isHazardousCargo;
-        SerialNumber = $"KON-L-{Id}";
     }
     
     public void SendNotification()

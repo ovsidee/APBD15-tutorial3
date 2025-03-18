@@ -13,13 +13,9 @@ public abstract class Container
     public string SerialNumber { get; set; }
     public double MaxPayLoad { get; set; }
 
-    public Container ( double massOfCargo,
-        double height,
-        double tareWeight,
-        double depth,
-        double maxPayLoad 
-    )
+    public Container (char c, double massOfCargo, double height, double tareWeight, double depth, double maxPayLoad)
     {
+        SerialNumber = $"KON-{c}-{Id}";
         MassOfCargo = massOfCargo;
         Height = height;
         TareWeight = tareWeight;
