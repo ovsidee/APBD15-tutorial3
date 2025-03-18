@@ -8,12 +8,10 @@ public class GasContainer : Container, IHazardNotifier
     {
         Pressure = pressure;
     }
-    
     public void SendNotification()
     {
-       Console.WriteLine($"Hazard alert! Container: {SerialNumber}");
+       Console.WriteLine($"Hazard alert! Container: \"{SerialNumber}\"");
     }
-
     public override void EmptyCargo()
     {
         MassOfCargo *= 0.05;

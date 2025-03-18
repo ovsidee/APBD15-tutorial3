@@ -8,12 +8,10 @@ public class LiquidContainer : Container, IHazardNotifier
     {
         IsHazardousCargo = isHazardousCargo;
     }
-    
     public void SendNotification()
     {
-        Console.WriteLine($"Hazard alert! Container: {SerialNumber} is overloaded or improperly loaded!");
+        Console.WriteLine($"Hazard alert! Container: \"{SerialNumber}\" is overloaded or improperly loaded!");
     }
-
     public override void LoadContainer(double massOfCargo)
     {
         double allowedCapacity = 0;
@@ -25,7 +23,7 @@ public class LiquidContainer : Container, IHazardNotifier
         }
         if (massOfCargo > allowedCapacity) {
             SendNotification();
-            throw new OverfillException("Cargo exceeds allowed capacity of {allowedCapacity} kg.");
+            throw new OverfillException($"Cargo exceeds allowed capacity of \"{allowedCapacity}\" kg.");
         }
         base.LoadContainer(massOfCargo);
     }

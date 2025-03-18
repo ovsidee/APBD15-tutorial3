@@ -1,27 +1,38 @@
 ﻿namespace APBD15_tut3;
 
-public class RefrigeratedContainer : Container, IHazardNotifier
+public class RefrigeratedContainer : Container
 {
     public string ProductType { get; set; }
-    public double Temperature { get; set; }
+    public double TemperatureOfProduct { get; set; }
     public Dictionary<string, double> TypeTemperature { get; set; }
-    
-    public RefrigeratedContainer(string productType, double temperature, double massOfCargo, double height, double tareWeight, double depth, double maxPayLoad) 
+
+    public RefrigeratedContainer(string productType, double temperatureOfProduct, double massOfCargo, double height,
+        double tareWeight, double depth, double maxPayLoad)
         : base('C', massOfCargo, height, tareWeight, depth, maxPayLoad)
     {
         TypeTemperature = new Dictionary<string, double>();
-        if (temperature < TypeTemperature[productType])
-        {
-            throw new OverfillException("Temperature of the product is too low");
-        }
-        TypeTemperature.Add(productType, temperature);
-        
-        ProductType = productType;
-        Temperature = temperature;
-    }
+        TypeTemperature.Add("Bananas", 13.3);
+        TypeTemperature.Add("Chocolate", 18);
+        TypeTemperature.Add("Fish", 2);
+        TypeTemperature.Add("Meat", -15);
+        TypeTemperature.Add("Ice cream", -18);
+        TypeTemperature.Add("Frozen pizza", -30);
+        TypeTemperature.Add("Cheese", 7.2);
+        TypeTemperature.Add("Sausages", 5);
+        TypeTemperature.Add("Butter", 20.5);
+        TypeTemperature.Add("Eggs", 19);
 
-    public void SendNotification()
-    {
-        Console.WriteLine($"Hazard alert! Container: {SerialNumber}");
+        if (!TypeTemperature.ContainsKey(productType))
+        {
+            throw new InvalidOperationException("Product type is not supported");
+        }
+
+        if (temperatureOfProduct < TypeTemperature[productType])
+        {
+            throw new InvalidOperationException($"Temperature of the product cannot be lower than the temperature required by: \"{productType}\"");
+        }
+
+        ProductType = productType;
+        TemperatureOfProduct = temperatureOfProduct;
     }
 }

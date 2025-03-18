@@ -12,7 +12,6 @@ public abstract class Container
     public double Depth { get; set; }
     public string SerialNumber { get; set; }
     public double MaxPayLoad { get; set; }
-
     public Container (char c, double massOfCargo, double height, double tareWeight, double depth, double maxPayLoad)
     {
         SerialNumber = $"KON-{c}-{Id}";
@@ -22,7 +21,6 @@ public abstract class Container
         Depth = depth;
         MaxPayLoad = maxPayLoad;
     }
-
     public virtual void LoadContainer(double massOfCargo)
     {
         if (massOfCargo > MaxPayLoad)
@@ -31,7 +29,6 @@ public abstract class Container
         } 
         MassOfCargo = massOfCargo;
     }
-
     public virtual void EmptyCargo()
     {
         MassOfCargo = 0;
