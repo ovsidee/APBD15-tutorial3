@@ -3,8 +3,8 @@
 public class GasContainer : Container, IHazardNotifier
 {
     public double Pressure { get; set; }  
-    public GasContainer(double pressure, double massOfCargo, double height, double tareWeight, double depth, double maxPayLoad)
-        : base('G',massOfCargo, height, tareWeight, depth, maxPayLoad)
+    public GasContainer(double pressure, double height, double tareWeight, double depth, double maxPayLoad)
+        : base('G', height, tareWeight, depth, maxPayLoad)
     {
         Pressure = pressure;
     }

@@ -3,8 +3,8 @@
 public class LiquidContainer : Container, IHazardNotifier
 {
     public bool IsHazardousCargo { get; }
-    public LiquidContainer(bool isHazardousCargo, double massOfCargo, double height, double tareWeight, double depth, double maxPayLoad)
-        : base('L', massOfCargo, height, tareWeight, depth, maxPayLoad)
+    public LiquidContainer(bool isHazardousCargo, double height, double tareWeight, double depth, double maxPayLoad)
+        : base('L', height, tareWeight, depth, maxPayLoad)
     {
         IsHazardousCargo = isHazardousCargo;
     }

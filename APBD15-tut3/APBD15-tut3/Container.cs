@@ -12,22 +12,23 @@ public abstract class Container
     public double Depth { get; set; }
     public string SerialNumber { get; set; }
     public double MaxPayLoad { get; set; }
-    public Container (char c, double massOfCargo, double height, double tareWeight, double depth, double maxPayLoad)
+    public Container (char c, double height, double tareWeight, double depth, double maxPayLoad)
     {
         SerialNumber = $"KON-{c}-{Id}";
-        MassOfCargo = massOfCargo;
         Height = height;
         TareWeight = tareWeight;
         Depth = depth;
         MaxPayLoad = maxPayLoad;
     }
+
     public virtual void LoadContainer(double massOfCargo)
     {
-        if (massOfCargo > MaxPayLoad)
+        double massOfCargoWillBe = MassOfCargo + massOfCargo;
+        if (massOfCargoWillBe > MaxPayLoad)
         {
             throw new OverfillException("Cannot load cargo, exceeds maximum capacity");
-        } 
-        MassOfCargo = massOfCargo;
+        }
+        MassOfCargo = massOfCargoWillBe; 
     }
     public virtual void EmptyCargo()
     {
