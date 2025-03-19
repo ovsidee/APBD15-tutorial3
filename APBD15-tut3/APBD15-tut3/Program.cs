@@ -73,6 +73,7 @@ namespace APBD15_tut3
             catch (InvalidOperationException e)
             {
                 Console.WriteLine(e.Message);
+                throw;
             }
             Console.WriteLine("Containers added to the ship1 successfully");
             Console.WriteLine("===========\n");
