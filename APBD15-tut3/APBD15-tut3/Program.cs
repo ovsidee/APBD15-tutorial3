@@ -131,7 +131,29 @@ namespace APBD15_tut3
             Console.WriteLine("Testing hazard notifications:");
             gasContainer.SendNotification();
             liquidContainer.SendNotification();
-            Console.WriteLine("===========");
+            Console.WriteLine("===========\n");
+            
+            //check for the error "unsupported product type"
+            // try
+            // {
+            //     RefrigeratedContainer invalidContainer = new RefrigeratedContainer("UnknownProduct", 5, 200, 4000, 100, 12_000);
+            // }
+            // catch (ArgumentException e)
+            // {
+            //     Console.WriteLine(e.Message);
+            //     throw;
+            // }
+            
+            //check for the error "temperature too low"
+            // try
+            // {
+            //     RefrigeratedContainer lowTempContainer = new RefrigeratedContainer("Fish", -5, 200, 4000, 100, 12_000);
+            // }
+            // catch (ArgumentException e)
+            // {
+            //     Console.WriteLine(e.Message);
+            //     throw;
+            // }
         }
     }
 }
