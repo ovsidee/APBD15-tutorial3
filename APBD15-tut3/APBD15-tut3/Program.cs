@@ -21,6 +21,7 @@ namespace APBD15_tut3
             liquidContainer.PrintInformationAboutContainer();
             refrigeratedContainer.PrintInformationAboutContainer();
             Console.WriteLine("===========\n");
+            
             //for catching exception "Cannot load cargo, exceeds maximum capacity"
             // try
             // {
@@ -61,6 +62,7 @@ namespace APBD15_tut3
             //     Console.WriteLine(e.Message);
             //     throw;
             // }
+            
             Console.WriteLine("===========");
             try
             {
