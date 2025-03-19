@@ -14,7 +14,7 @@ public class RefrigeratedContainer : Container
         TypeTemperature.Add("Chocolate", 18);
         TypeTemperature.Add("Fish", 2);
         TypeTemperature.Add("Meat", -15);
-        TypeTemperature.Add("Ice cream", -1);
+        TypeTemperature.Add("Ice cream", -18);
         TypeTemperature.Add("Frozen pizza", -30);
         TypeTemperature.Add("Cheese", 7.2);
         TypeTemperature.Add("Sausages", 5);
@@ -28,7 +28,7 @@ public class RefrigeratedContainer : Container
         
         if (temperatureOfContainer < TypeTemperature[productType])
         {
-            throw new ArgumentException($"Temperature of the product cannot be lower than the temperature required by: \"{productType}\"");
+            throw new ArgumentException($"Temperature of the container cannot be lower than the temperature required by: \"{productType}\"");
         }
         
         ProductType = productType;
