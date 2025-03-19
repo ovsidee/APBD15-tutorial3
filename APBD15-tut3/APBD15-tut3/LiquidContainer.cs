@@ -10,7 +10,7 @@ public class LiquidContainer : Container, IHazardNotifier
     }
     public void SendNotification()
     {
-        Console.WriteLine($"Hazard alert! Container: \"{SerialNumber}\" is overloaded or improperly loaded!");
+        Console.WriteLine($"Hazard alert! Container: \"{SerialNumber}\"");
     }
     public override void LoadContainer(double massOfCargo)
     {
