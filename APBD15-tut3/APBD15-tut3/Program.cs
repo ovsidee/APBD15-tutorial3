@@ -8,8 +8,8 @@ namespace APBD15_tut3
     {
         static void Main(string[] args)
         {
-            ContainerShip ship1 = new ContainerShip(5, 50_000);
-            ContainerShip ship2 = new ContainerShip(5, 50_000);
+            ContainerShip ship1 = new ContainerShip(5, 50_000, 20);
+            ContainerShip ship2 = new ContainerShip(5, 50_000, 20);
             
             GasContainer gasContainer = new GasContainer(10, 200, 3000, 100, 10_000);
             LiquidContainer liquidContainer = new LiquidContainer(true, 200, 2500, 100, 8000);
