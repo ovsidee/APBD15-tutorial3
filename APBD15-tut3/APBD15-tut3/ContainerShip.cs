@@ -4,7 +4,7 @@ public class ContainerShip
 {
     public int MaximumNumberOfContainers { get; set; }
     public double MaximumWeightOfContainers { get; set; }
-    public double MaximumSpeed{ get; set; }
+    public double MaximumSpeed { get; set; }
     public List<Container> Containers { get; set; } = new List<Container>();
 
     public ContainerShip(int maximumNumberOfContainers, double maximumWeightOfContainers, double maximumSpeed)
